@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./grade.png"  class="img" alt="" srcset="">
+        <div class="box">
+            <div class="app-form">
+                <input type="text" class="form-control" placeholder="Web programming" id="web">
+            </div>
+            <div class="app-form">
+                <input type="text" class="form-control" placeholder="Maths" id="math">
+            </div>
+            <div class="app-form">
+                <input type="text" class="form-control" placeholder="Physics" id="Phy">
+            </div>
+            <div class="app-form">
+                <input type="text" class="form-control" placeholder="chemistry" id="chem">
+            </div>
+            <div class="app-form">
+                <input type="text" class="form-control"  name="" value="show" onclick="calcy()">
+            </div>
+        </div>
+        <div class="result">
+            <p id="para"></p>
+        </div>
+    </div>
+
+    <script >
+        const calcy = ()=>{
+
+            
+            var m1=document.getElementById('web').value;
+            var m2=document.getElementById('math').value;
+            var m3=document.getElementById('phy').value;
+            var m4=document.getElementById('chem').value;
+            let grades=" ";
+            var total =parseFloat(m1)+parseFloat(m2)+parseFloat(m3)+parseFloat(m4);
+            let perc=(total/400)*100;
+
+            if(perc<=100 && perc>=80){
+                grades='A';
+            }
+            else if(perc<=79 && perc>=60){
+                grades='B';
+            }
+            else if(perc<=59 && perc>=40){
+                grades='C';
+            }
+            else{
+                grades='F';
+            }
+            document.getElementById('para').innerHTML='Out of 400 you got ${total} marks and ${perc}%. <br> Your grades is ${grades}';
+            
+             
+        }
+    </script>
+</body>
+</html>
